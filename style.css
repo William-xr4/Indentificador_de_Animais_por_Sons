@@ -1,0 +1,13 @@
+button{
+    color:white !important;
+}
+.copy_right_footer{
+    position:fixed;
+    bottom:0px;
+    width:100%;
+    font-size:20px;
+    background-color:rgb(0, 255, 50) !important;
+    color:rgb(0, 150, 255) !important;
+    line-height:3;
+    text-align:center;
+}
