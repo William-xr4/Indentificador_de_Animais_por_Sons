@@ -1,6 +1,7 @@
 var cachorro=0;
 var gato=0;
 var lobo=0;
+var backgroundnoise=0;
 var classifier;
 
 function Start_Classification(){
@@ -23,7 +24,7 @@ function gotResults(error, results){
         var cor="rgb("+vermelho+", "+verde+", "+azul+")";
 
         document.getElementById("h4").innerHTML="Posso ouvir o som de: "+results[0].label;
-        document.getElementById("h3").innerHTML="Gato detectado: "+gato+", cachorro detectado: "+cachorro+", lobo detectado: "+lobo;
+        document.getElementById("h3").innerHTML="Gato detectado: "+gato+", cachorro detectado: "+cachorro+", lobo detectado: "+lobo+", backgroundnoise detectado: "+backgroundnoise;
         document.getElementById("h4").style.color=cor;
         document.getElementById("h3").style.color=cor;
 
@@ -37,9 +38,13 @@ function gotResults(error, results){
             img.src="gato.jpeg";
             gato=gato+1;
         }
-        else{
+        else if(results[0].label=="uivo"){
             img.src="lobo.webp";
             lobo=lobo+1;
+        }
+        else{
+            img.src="Orelha.png";
+            backgroundnoise=backgroundnoise+1;
         }
     }
 }
